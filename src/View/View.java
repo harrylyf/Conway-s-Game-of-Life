@@ -127,16 +127,16 @@ public class View {
 		gbc.gridwidth = GridBagConstraints.REMAINDER;
 		gbc.anchor = GridBagConstraints.CENTER;
 
-		lbthresholdsvalues = new JLabel("low birth threshold: " + paint_frame.getCells().getLow_birth_threshold());
+		lbthresholdsvalues = new JLabel();
 		optionsPanel.add(lbthresholdsvalues, gbc);
 		
-		hbthresholdsvalues = new JLabel("high birth threshold: " + paint_frame.getCells().getHigh_birth_threshold());
+		hbthresholdsvalues = new JLabel();
 		optionsPanel.add(hbthresholdsvalues, gbc);
 
-		lsthresholdsvalues = new JLabel("low survive threshold: " + paint_frame.getCells().getLow_survive_threshold());
+		lsthresholdsvalues = new JLabel();
 		optionsPanel.add(lsthresholdsvalues, gbc);
 
-		hsthresholdsvalues = new JLabel("high survive threshold: " + paint_frame.getCells().getHigh_survive_threshold());
+		hsthresholdsvalues = new JLabel();
 		optionsPanel.add(hsthresholdsvalues, gbc);
 
 		optionsPanel.add(Box.createVerticalStrut(20), gbc);
@@ -326,7 +326,6 @@ public class View {
 	public void setThreshold_change_invalid(String text, Color color) {
 		threshold_change_invalid.setForeground(color);
 		threshold_change_invalid.setText(text);
-//		this.threshold_change_invalid = threshold_change_invalid;
 	}
 
 	public JLabel getTimeLabel() {

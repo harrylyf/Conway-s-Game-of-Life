@@ -26,6 +26,9 @@ public class Controller {
 	public void initController() {
 		
 		view.getLbthresholdsvalues().setText("low birth threshold: " + model.getLow_birth_threshold());
+		view.getLsthresholdsvalues().setText("low survive threshold: " + model.getLow_survive_threshold());
+		view.getHbthresholdsvalues().setText("high birth threshold: " + model.getHigh_birth_threshold());
+		view.getHsthresholdsvalues().setText("high survive threshold: " + model.getHigh_survive_threshold());
 		
 		view.getThreshold_changeBtn().addActionListener(e -> {
 			
@@ -177,7 +180,6 @@ public class Controller {
 		view.init_view();
 		initController();
 		check_window_close();
-//		System.out.println(model.getLow_birth_threshold());
 	}
 	
 	public void threshold_message_update() {

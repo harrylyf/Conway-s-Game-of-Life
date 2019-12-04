@@ -1,4 +1,4 @@
-package cell;
+package Model;
 
 public class cell_paint {
 	private cell cell;

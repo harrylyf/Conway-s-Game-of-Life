@@ -1,19 +1,21 @@
-package GUI;
+package Controller;
 
-import cell.cell;
-import cell.cell_paint;
-import cell.cells_board;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-public class GameOfLife_PaintFrame extends JPanel implements MouseMotionListener, MouseListener {
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
-	private cells_board cells;
+import Model.*;
+import View.*;
+
+public class paint_frame_controller extends JPanel implements MouseMotionListener, MouseListener {
+	private model cells;
 	private ArrayList<cell_paint> sections;
 
 	private int dimension;
@@ -21,7 +23,7 @@ public class GameOfLife_PaintFrame extends JPanel implements MouseMotionListener
 
 	private boolean allow_paint;
 
-	public GameOfLife_PaintFrame(int dimension, int count, int lb, int hb, int ls, int hs) {
+	public paint_frame_controller(int dimension, int count, int lb, int hb, int ls, int hs) {
 		this.dimension = dimension;
 		this.count = count;
 		this.allow_paint = false;
@@ -29,7 +31,7 @@ public class GameOfLife_PaintFrame extends JPanel implements MouseMotionListener
 		setPreferredSize(new Dimension(dimension, dimension));
 		setBackground(Color.WHITE);
 
-		this.cells = new cells_board(count, lb, hb, ls, hs);
+		this.cells = new model(count, lb, hb, ls, hs);
 		this.sections = new ArrayList<>();
 		generateSections();
 
@@ -88,7 +90,7 @@ public class GameOfLife_PaintFrame extends JPanel implements MouseMotionListener
 
 	}
 
-	public cells_board getCells() {
+	public model getCells() {
 		return cells;
 	}
 
@@ -176,5 +178,4 @@ public class GameOfLife_PaintFrame extends JPanel implements MouseMotionListener
 			}
 		}
 	}
-
 }

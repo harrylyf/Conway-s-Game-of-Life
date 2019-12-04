@@ -1,6 +1,4 @@
-package cell;
-
-import java.util.ArrayList;
+package Model;
 
 public class cell {
 
